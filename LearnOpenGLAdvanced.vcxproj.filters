@@ -22,6 +22,12 @@
     <Filter Include="Resource Files\Backpack">
       <UniqueIdentifier>{fbea109f-178d-439a-ae96-3556fb03b189}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Shaders\Object">
+      <UniqueIdentifier>{3cee5657-f4c0-486f-aaf5-c43966c4b24a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Light Source">
+      <UniqueIdentifier>{d21587cb-fbe2-4e06-af4b-7172559ef154}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source Files\program.cpp">
@@ -87,11 +93,17 @@
     <None Include="Resource Files\Backpack\backpack.mtl">
       <Filter>Resource Files\Backpack</Filter>
     </None>
-    <None Include="Source Files\Shaders\frag.glsl">
-      <Filter>Source Files\Shaders</Filter>
+    <None Include="Source Files\Shaders\Light Source\frag.glsl">
+      <Filter>Source Files\Shaders\Light Source</Filter>
     </None>
-    <None Include="Source Files\Shaders\vert.glsl">
-      <Filter>Source Files\Shaders</Filter>
+    <None Include="Source Files\Shaders\Light Source\vert.glsl">
+      <Filter>Source Files\Shaders\Light Source</Filter>
+    </None>
+    <None Include="Source Files\Shaders\Object\frag.glsl">
+      <Filter>Source Files\Shaders\Object</Filter>
+    </None>
+    <None Include="Source Files\Shaders\Object\vert.glsl">
+      <Filter>Source Files\Shaders\Object</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource Files\Backpack\backpack.mtl" />
-    <None Include="Source Files\Shaders\frag.glsl" />
-    <None Include="Source Files\Shaders\vert.glsl" />
+    <None Include="Source Files\Shaders\Light Source\frag.glsl" />
+    <None Include="Source Files\Shaders\Light Source\vert.glsl" />
+    <None Include="Source Files\Shaders\Object\frag.glsl" />
+    <None Include="Source Files\Shaders\Object\vert.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource Files\Backpack\backpack.obj">

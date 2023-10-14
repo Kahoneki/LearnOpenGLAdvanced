@@ -8,6 +8,7 @@
 #include <ASSIMP/config.h>
 
 #include <iostream>
+#include <format>
 
 #include "../Header Files/stb_image.h"
 #include "../Header Files/shader.h"
@@ -56,10 +57,35 @@ int main() {
 
 	stbi_set_flip_vertically_on_load(true);
 
-	Shader ourShader("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/vert.glsl",
-		             "C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/frag.glsl");
+
+	//----SHADERS AND MODELS----//
+	Shader lightingShader("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Object/vert.glsl",
+						  "C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Object/frag.glsl");
+
+	//Shader lightSourceShader("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Light Source/vert.glsl",
+	//						 "C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Light Source/frag.glsl");
 
 	Model backpackModel("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Resource Files/Backpack/backpack.obj");
+
+
+	//-----------------------//
+	//----OBJECT SETTINGS----//
+	//-----------------------//
+
+	const int numPointLights{ 4 };
+	glm::vec3 pointLightPositions[numPointLights] = {
+		glm::vec3(0.7f,  0.2f,  2.0f),
+		glm::vec3(2.3f, -3.3f, -4.0f),
+		glm::vec3(-4.0f,  2.0f, -12.0f),
+		glm::vec3(0.0f,  0.0f, -3.0f)
+	};
+	
+	glm::vec3 pointLightColours[numPointLights] = {
+		glm::vec3(0.925f, 0.690f, 0.909f),
+		glm::vec3(0.925f, 0.690f, 0.909f),
+		glm::vec3(0.925f, 0.690f, 0.909f),
+		glm::vec3(0.925f, 0.690f, 0.909f),
+	};
 
 
 	//------------------------//
@@ -89,15 +115,54 @@ int main() {
 		view = camera.GetViewMatrix();
 		projection = glm::perspective(glm::radians(camera.Fov), aspectRatio, 0.1f, 100.0f);
 
-		ourShader.use();
-		ourShader.setMat4("projection", projection);
-		ourShader.setMat4("view", view);
-		ourShader.setMat4("model", model);
+
+		//----SETTING UNIFORMS----//
+
+		lightingShader.use();
+		lightingShader.setMat4("model", model);
+		lightingShader.setMat4("view", view);
+		lightingShader.setMat4("projection", projection);
+		lightingShader.setVec3("viewPos", camera.Position);
+
+		//--Material--//
+		lightingShader.setFloat("material.shininess", 76.8f);
+
+
+		//--Lights--//
+		//Directional lights
+		lightingShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
+		lightingShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+		lightingShader.setVec3("dirLight.diffuse", 0.3f, 0.3f, 0.3f);
+		lightingShader.setVec3("dirLight.specular", 0.7f, 0.7f, 0.7f);
+
+		//Point lights
+		for (int i = 0; i < numPointLights; i++)
+		{
+			lightingShader.setVec3(std::format("pointLights[{}].position", i), pointLightPositions[i]);
+			lightingShader.setFloat(std::format("pointLights[{}].constant", i), 1.0f);
+			lightingShader.setFloat(std::format("pointLights[{}].linear", i), 0.09f);
+			lightingShader.setFloat(std::format("pointLights[{}].quadratic", i), 0.032f);
+			lightingShader.setVec3(std::format("pointLights[{}].ambient", i), pointLightColours[i] * 0.1f);
+			lightingShader.setVec3(std::format("pointLights[{}].diffuse", i), pointLightColours[i]);
+			lightingShader.setVec3(std::format("pointLights[{}].specular", i), pointLightColours[i]);
+		}
+
+		//Spotlight
+		//lightingShader.setVec3("spotlight.position", camera.Position);
+		//lightingShader.setVec3("spotlight.direction", camera.Front);
+		//lightingShader.setFloat("spotlight.innerCutoffAngle", glm::cos(glm::radians(10.0f)));
+		//lightingShader.setFloat("spotlight.outerCutoffAngle", glm::cos(glm::radians(12.5f)));
+		//lightingShader.setFloat("spotlight.constant", 1.0f);
+		//lightingShader.setFloat("spotlight.linear", 0.09f);
+		//lightingShader.setFloat("spotlight.quadratic", 0.032f);
+		//lightingShader.setVec3("spotlight.ambient", 0.0f, 0.0f, 0.0f);
+		//lightingShader.setVec3("spotlight.diffuse", 1.0f, 1.0f, 1.0f);
+		//lightingShader.setVec3("spotlight.specular", 1.0f, 1.0f, 1.0f);
 
 
 		//----DRAWING OBJECTS----//
 
-		backpackModel.Draw(ourShader);
+		backpackModel.Draw(lightingShader);
 
 
 		//Check & call events and swap the buffers
