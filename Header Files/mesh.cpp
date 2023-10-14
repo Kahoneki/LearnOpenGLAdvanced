@@ -5,7 +5,7 @@
 
 #include <GLM/glm.hpp>
 
-#include "Header Files/shader.h"
+#include "shader.h"
 
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures)

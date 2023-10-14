@@ -36,10 +36,10 @@
     <ClCompile Include="Source Files\External\glad.c">
       <Filter>Source Files\External</Filter>
     </ClCompile>
-    <ClCompile Include="mesh.cpp">
+    <ClCompile Include="Header Files\mesh.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="model.cpp">
+    <ClCompile Include="Header Files\model.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,10 +53,10 @@
     <ClInclude Include="Header Files\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mesh.h">
+    <ClInclude Include="Header Files\mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
+    <ClInclude Include="Header Files\model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
