@@ -59,13 +59,13 @@ int main() {
 
 
 	//----SHADERS AND MODELS----//
-	Shader lightingShader("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Object/vert.glsl",
-						  "C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Object/frag.glsl");
+	Shader lightingShader("./Source Files/Shaders/Object/vert.glsl",
+						  "./Source Files/Shaders/Object/frag.glsl");
 
-	//Shader lightSourceShader("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Light Source/vert.glsl",
-	//						 "C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Light Source/frag.glsl");
+	Shader lightSourceShader("./Source Files/Shaders/Light Source/vert.glsl",
+							 "./Source Files/Shaders/Light Source/frag.glsl");
 
-	Model boxModel("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Resource Files/Box/box.obj");
+	Model boxModel("./Resource Files/Box/box.obj");
 
 
 	//-----------------------//
