@@ -65,7 +65,7 @@ int main() {
 	//Shader lightSourceShader("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Light Source/vert.glsl",
 	//						 "C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Source Files/Shaders/Light Source/frag.glsl");
 
-	Model backpackModel("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Resource Files/Backpack/backpack.obj");
+	Model boxModel("C:/Users/shiny/Desktop/Code/OpenGL/LearnOpenGLAdvanced/Resource Files/Box/box.obj");
 
 
 	//-----------------------//
@@ -162,7 +162,7 @@ int main() {
 
 		//----DRAWING OBJECTS----//
 
-		backpackModel.Draw(lightingShader);
+		boxModel.Draw(lightingShader);
 
 
 		//Check & call events and swap the buffers

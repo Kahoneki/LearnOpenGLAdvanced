@@ -9,24 +9,17 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\Shaders">
       <UniqueIdentifier>{402b7e02-dc6b-434a-bfb4-432a0f0d7d7f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\External">
       <UniqueIdentifier>{d2a07971-bec5-4d0f-b68d-49147c707c6c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Backpack">
-      <UniqueIdentifier>{fbea109f-178d-439a-ae96-3556fb03b189}</UniqueIdentifier>
+    <Filter Include="Source Files\Shaders\Light Source">
+      <UniqueIdentifier>{d21587cb-fbe2-4e06-af4b-7172559ef154}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Shaders\Object">
       <UniqueIdentifier>{3cee5657-f4c0-486f-aaf5-c43966c4b24a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Shaders\Light Source">
-      <UniqueIdentifier>{d21587cb-fbe2-4e06-af4b-7172559ef154}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,29 +63,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resource Files\Backpack\specular.jpg">
-      <Filter>Resource Files\Backpack</Filter>
-    </Image>
-    <Image Include="Resource Files\Backpack\ao.jpg">
-      <Filter>Resource Files\Backpack</Filter>
-    </Image>
-    <Image Include="Resource Files\Backpack\diffuse.jpg">
-      <Filter>Resource Files\Backpack</Filter>
-    </Image>
-    <Image Include="Resource Files\Backpack\normal.png">
-      <Filter>Resource Files\Backpack</Filter>
-    </Image>
-    <Image Include="Resource Files\Backpack\roughness.jpg">
-      <Filter>Resource Files\Backpack</Filter>
-    </Image>
-    <Image Include="Resource Files\Backpack\backpack.obj">
-      <Filter>Resource Files\Backpack</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resource Files\Backpack\backpack.mtl">
-      <Filter>Resource Files\Backpack</Filter>
-    </None>
     <None Include="Source Files\Shaders\Light Source\frag.glsl">
       <Filter>Source Files\Shaders\Light Source</Filter>
     </None>

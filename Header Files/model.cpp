@@ -133,6 +133,7 @@ Mesh Model::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 std::vector<Texture> Model::LoadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName)
 {
 	std::vector<Texture> textures;
+	std::cout << mat->GetTextureCount(type);
 	for (unsigned int i = 0; i < mat->GetTextureCount(type); i++) {
 		aiString str;
 		mat->GetTexture(type, i, &str);

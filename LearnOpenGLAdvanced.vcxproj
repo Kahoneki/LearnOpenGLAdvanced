@@ -35,27 +35,10 @@
     <ClInclude Include="Header Files\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resource Files\Backpack\ao.jpg" />
-    <Image Include="Resource Files\Backpack\diffuse.jpg" />
-    <Image Include="Resource Files\Backpack\normal.png" />
-    <Image Include="Resource Files\Backpack\roughness.jpg" />
-    <Image Include="Resource Files\Backpack\specular.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resource Files\Backpack\backpack.mtl" />
     <None Include="Source Files\Shaders\Light Source\frag.glsl" />
     <None Include="Source Files\Shaders\Light Source\vert.glsl" />
     <None Include="Source Files\Shaders\Object\frag.glsl" />
     <None Include="Source Files\Shaders\Object\vert.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Resource Files\Backpack\backpack.obj">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
-    </Image>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
